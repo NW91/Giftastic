@@ -13,11 +13,11 @@ $("#sports-view").empty();
 
 //Forloop of the sports + creating new buttons/classes
 for(var i = 0; i < sportTopics.length; i++) {
-var a = $('<button>');
-a.addClass('sport');
+    var a = $('<button>');
+    a.addClass('sport');
 
-a.attr('data-name', sportTopics[i]);
-a.text(sportTopics[i]);
+    a.attr('data-name', sportTopics[i]);
+    a.text(sportTopics[i]);
 $("sports-view").append(a);
     }
 s= $("sports-input").focus();
@@ -35,7 +35,7 @@ event.preventDefault();
 var differentSport = $("sport-input").val().trim();
     
 //Sport input from the textbox added to the array
-topics.push(differentSport);
+sportTopics.push(differentSport);
     
 //Calls the button which handles the processing of our topics sports array
 renderButtons();
