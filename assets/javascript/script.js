@@ -26,10 +26,9 @@ $(document).ready(function() {
     }
     s=
     $("#tvShow-input").focus();
-    
     }
     
-    renderButtons();
+renderButtons();
     
     //Event handlers, function handles events where one button is clicked
     $("#add-tvShow").on('click', function() {
@@ -43,9 +42,8 @@ $(document).ready(function() {
     //this Tv Show from the textbox is then added into the array
     tvShows.push(tvShow);
     
-    //Call to render the buttons
-    renderButtons();
-    
+//Call to render the buttons
+renderButtons();
     });
     
 //Displays info
