@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 //Initial array of tv shows
-    var tvShows = ["Mad Men", "Community", "Breaking Bad", "The Office", "The Good Place", "Atlanta", "Master of None", "Black Mirror", "Boardwalk Empire", "Veep"]
+    var topics = ["Mad Men", "Community", "Breaking Bad", "The Office", "The Good Place", "Atlanta", "Master of None", "Black Mirror", "Boardwalk Empire", "Veep"]
     designatedLocation = " "
     
     
@@ -9,20 +9,20 @@ $(document).ready(function() {
     function renderButtons() {
     
 //Empties the box for new shows
-    $("#tvShows-view").empty();
+    $("#topics-view").empty();
     
 //Forloop through the array of Tv Shows
-    for (var i=0; i < tvShows.length; i++) {
+    for (var i=0; i < topics.length; i++) {
     //Dynamically generates the button for each tvShow in the array
         var a = $('<button>');
     //Adding a class
         a.addClass('tvShow');
     //adding a data-attribute with a value of the television at index i
-        a.attr('data-name', tvShows[i]);
+        a.attr('data-name', topics[i]);
     //providing the button with text using the array
-        a.text(tvShows[i]);
+        a.text(topics[i]);
     //adding the button the html
-    $("#tvShows-view").append(a);
+    $("#topics-view").append(a);
     }
     s=
     $("#tvShow-input").focus();
@@ -40,7 +40,7 @@ renderButtons();
     var tvShow = $("#tvShow-input").val().trim();
     
     //this Tv Show from the textbox is then added into the array
-    tvShows.push(tvShow);
+    topics.push(tvShow);
     
 //Call to render the buttons
 renderButtons();
@@ -48,7 +48,7 @@ renderButtons();
     
 //Displays info
 $(document).on('click', 'button',  function() {
-    // Deleting the tvShows prior to adding new tvShows so you don't repeat buttons
+    // Deleting the topics prior to adding new topics so you don't repeat buttons
     $('#designatedLocation').empty(); 
         var b = $(this).attr('data-name');
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + b + "&api_key=dc6zaTOxFJmzC&limit=12";  
